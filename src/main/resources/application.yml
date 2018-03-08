@@ -1,0 +1,30 @@
+spring:
+    datasource:
+        username: root
+        password: root
+        url: jdbc:mysql://localhost:3306/accountdb?autoReconnect=true&useSSL=false
+    jpa:
+        hibernate:
+            ddl-auto: update
+            naming:
+              physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5Dialect
+        show-sql: true
+    profiles:
+      active: dev
+server:
+  port: 7000
+
+#Deposit limit properties
+
+daily_limit: 150000
+tnx_limit: 40000
+daily_count_limit: 4
+
+#Withdrawal limit properties
+
+w_daily_limit: 50000
+w_tnx_limit: 20000
+w_daily_count_limit: 3
